@@ -69,11 +69,14 @@
         data.forEach(function(account) {
           let statusBadge = '';
           let informesButton = '';
+          let urlbtn = '';
+          
 
           if (account.status.toLowerCase() === 'vendida') {
             statusBadge = '<span class="badge bg-danger">Vendida</span>';
           } else {
-            informesButton = `<a href="https://wa.me/5491159318371?text=Informaci%C3%B3n%20de%20la%20cuenta%20001" class="btn btn-success w-100">Informes</a>`;
+            urlbtn = `https://wa.me/5491159318371?text=Informaci%C3%B3n%20de%20la%20cuenta%20${account.code}`;
+            informesButton = `<a href="" class="btn btn-success w-100">Informes</a>`;
           }
 
           $('#game-list').append(`
