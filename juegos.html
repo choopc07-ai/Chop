@@ -50,8 +50,20 @@
     </div>
       
 
-    
+  </div>  
 
+  <!-- Modal de imagen -->
+  <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark">
+        <div class="modal-body text-center">
+          <img id="modalImage" src="" class="img-fluid" alt="Imagen del juego">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  
   <footer class="text-center text-muted mb-3">
     &copy; 2025 Chop - Todos los derechos reservados
   </footer>
@@ -82,7 +94,7 @@
           $('#game-list').append(`
             <div class="col">
               <div class="card h-100">
-                <img src="${account.image}" class="card-img-top" alt="${account.game}">
+                <img src="${account.image}" class="card-img-top" alt="${account.game}" data-bs-toggle="modal" data-bs-target="#imageModal" data-image="${account.image}">
                 <div class="card-body">
                   <h5 class="card-title">${account.game}</h5>
                   <p class="card-text">${account.price}</p>
@@ -93,6 +105,11 @@
             </div>
           `);
         });
+      });
+
+      $('#game-list').on('click', 'img', function() {
+        const imageUrl = $(this).attr('data-image');
+        $('#modalImage').attr('src', imageUrl); // Actualiza la imagen en el modal
       });
     });
   </script>
