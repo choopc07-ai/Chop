@@ -6,13 +6,27 @@
   <title>Inicio - Venta de Cuentas y Skins</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    .cliente-img {
-      width: 80px;
-      height: 80px;
-      object-fit: cover;
-      border-radius: 50%;
-      margin-bottom: 15px;
-    }
+    .collage-grid-vertical {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 20px;
+  }
+
+  .collage-grid-vertical img {
+    width: 100%;
+    aspect-ratio: 3 / 4; /* proporción vertical 3:4 */
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  }
+
+  .collage-grid-vertical img:hover {
+    transform: scale(1.05);
+    z-index: 10;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  }
   </style>
 </head>
 <body>
@@ -38,49 +52,23 @@
   <!-- BIENVENIDA -->
   <div class="container text-center mt-5">
     <h1>Bienvenido a Chop</h1>
-    <p>Venta de perfiles de streaming y skins de juegos a excelentes precios.</p>
+    <p>Venta de perfiles de streaming y cuentas de video juegos a excelentes precios.</p>
   </div>
 
-  <!-- CLIENTES SATISFECHOS -->
-  <div class="container my-5">
-    <h2 class="text-center mb-4">💬 Clientes Satisfechos</h2>
-    <div class="row row-cols-1 row-cols-md-3 g-4">
-      
-      <!-- Cliente 1 -->
-      <div class="col">
-        <div class="card h-100 text-center">
-          <div class="card-body">
-            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Cliente 1" class="cliente-img">
-            <h5 class="card-title">Carlos A.</h5>
-            <p class="card-text">"Muy confiable y rápido. Compré una cuenta de Netflix y funcionó perfecto."</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Cliente 2 -->
-      <div class="col">
-        <div class="card h-100 text-center">
-          <div class="card-body">
-            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Cliente 2" class="cliente-img">
-            <h5 class="card-title">María F.</h5>
-            <p class="card-text">"Compré una skin de CS2 y llegó al instante. ¡Excelente atención!"</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Cliente 3 -->
-      <div class="col">
-        <div class="card h-100 text-center">
-          <div class="card-body">
-            <img src="https://randomuser.me/api/portraits/men/54.jpg" alt="Cliente 3" class="cliente-img">
-            <h5 class="card-title">Luis G.</h5>
-            <p class="card-text">"Los precios son muy buenos. Recomiendo 100% para revender."</p>
-          </div>
-        </div>
-      </div>
-
-    </div>
+<!-- CLIENTES SATISFECHOS COLLAGE -->
+<div class="container my-5">
+  <h2 class="text-center mb-4">💬 Clientes Satisfechos</h2>
+  <div class="collage-grid-vertical">
+    <img src="ref1.jpeg" alt="Cliente 1" class="item rounded shadow-sm">
+    <img src="ref2.jpeg" alt="Cliente 2" class="item rounded shadow-sm">
+    <img src="ref3.jpeg" alt="Cliente 3" class="item rounded shadow-sm">
+    <img src="ref4.jpeg" alt="Cliente 4" class="item rounded shadow-sm">
+    <img src="ref5.jpeg" alt="Cliente 5" class="item rounded shadow-sm">
+    <img src="ref6.jpeg" alt="Cliente 6" class="item rounded shadow-sm">
   </div>
+</div>
+
+  
 
   <!-- FOOTER -->
   <footer class="text-center mt-5 mb-3 text-muted">

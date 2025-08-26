@@ -10,6 +10,15 @@
       object-fit: cover;
       height: 180px;
     }
+	  .modal-img{
+	    width: 100%;
+	    height: auto;
+	  }
+    body.modal-open {
+      overflow: hidden !important;
+      position: fixed;
+      width: 100%;
+    }
   </style>
 </head>
 <body>
@@ -38,7 +47,7 @@
     <div class="row row-cols-1 row-cols-md-3 g-4">
       <div class="col">
         <div class="card h-100">
-          <img src="Cuenta1.jpeg" class="card-img-top" alt="AK-47 Redline">
+          <img src="Cuenta1.jpeg" class="card-img-top" alt="AK-47 Redline" data-bs-toggle="modal" data-bs-target="#modal1">
           <div class="card-body">
             <h5 class="card-title">AK-47 Redline (FT)</h5>
             <p class="card-text">Precio: $120 MXN</p>
@@ -49,7 +58,7 @@
 
       <div class="col">
         <div class="card h-100">
-          <img src="Cuenta1.jpeg" class="card-img-top" alt="AWP Asiimov">
+          <img src="Cuenta1.jpeg" class="card-img-top" alt="AWP Asiimov" data-bs-toggle="modal" data-bs-target="#modal1">
           <div class="card-body">
             <h5 class="card-title">AWP Asiimov (FT)</h5>
             <p class="card-text">Precio: $210 MXN</p>
@@ -60,12 +69,42 @@
 
 	<div class="col">
         <div class="card h-100">
-          <img src="Cuenta1.jpeg" class="card-img-top" alt="Knife Doppler">
+          <img src="Cuenta1.jpeg" class="card-img-top" alt="Knife Doppler" data-bs-toggle="modal" data-bs-target="#modal1">
           <div class="card-body">
             <h5 class="card-title">Knife Doppler (FN)</h5>
             <p class="card-text">Precio: $950 MXN</p>
             <a href="https://wa.me/5491159318371?text=Informaci%C3%B3n%20de%20la%20cuenta%20001" class="btn btn-success w-100">Informes</a>
           </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="modal fade" id="modal1" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content bg-dark">
+        <div class="modal-body text-center">
+          <img src="Cuenta1.jpeg" class="modal-img" alt="AK-47 Redline">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal2" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content bg-dark">
+        <div class="modal-body text-center">
+          <img src="Cuenta1.jpeg" class="modal-img" alt="AWP Asiimov">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="modal3" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content bg-dark">
+        <div class="modal-body text-center">
+          <img src="Cuenta1.jpeg" class="modal-img" alt="Knife Doppler">
         </div>
       </div>
     </div>
