@@ -7,6 +7,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Font Awesome para íconos -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <style>
     .collage-grid-vertical {
       display: grid;
@@ -66,9 +67,17 @@
 
   <!-- BIENVENIDA -->
   <div class="container text-center mt-5">
-    <h1>Bienvenido a Chop</h1>
+    <h1>Bienvenido a Dylaann chop</h1>
     <p>Venta de perfiles de streaming y cuentas de video juegos a excelentes precios.</p>
   </div>
+
+    <!-- OFERTAS -->
+  <div class="container my-5">
+    <h1 class="text-center mb-4">Ofertas del dia</h1>
+    <div id="game-list" class="row row-cols-1 row-cols-md-3 g-4">
+       <!-- Aquí se cargarán las cuentas dinámicamente -->
+    </div>
+  </div> 
 
   <!-- CLIENTES SATISFECHOS COLLAGE -->
   <div class="container my-5">
@@ -82,6 +91,23 @@
       <img src="ref6.jpeg" alt="Cliente 6" class="item rounded shadow-sm">
     </div>
   </div>
+
+  <!-- Métodos de Pago -->
+<div class="container my-5">
+  <h2 class="text-center mb-4">💳 Métodos de Pago</h2>
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-6">
+      <ul class="list-group">
+        <li class="list-group-item">
+          <i class="fab fa-btc me-2"></i> Binance (Disponibles en todos los países)
+        </li>
+        <li class="list-group-item">
+          <i class="fas fa-exchange-alt me-2"></i> Transferencia Bancaria (Argentina y México)
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
 
   <!-- Redes Sociales -->
   <div class="container text-center my-5">
@@ -99,5 +125,32 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+      <script>
+    $(document).ready(function() {
+      // URL de la API de SheetDB
+      const sheetApiUrl = 'https://sheetdb.io/api/v1/l6w1newc5snsa';  // Reemplaza con tu URL de SheetDB
+
+      // Obtener los datos del Excel a través de SheetDB
+      $.get(sheetApiUrl, function(data) {
+        // Iteramos sobre los datos y los agregamos al HTML
+        data.forEach(function(oferta) {
+          let urlbtn = '';
+          urlbtn = `https://wa.me/5491159318371?text=Informaci%C3%B3n%20de%20la%20cuenta%20${oferta.code}`;
+          $('#game-list').append(`
+            <div class="col">
+              <div class="card h-100">
+                <img src="${oferta.image}" class="card-img-top" alt="${oferta.game}">
+                <div class="card-body">
+                  <h5 class="card-title">${oferta.titulo}</h5>
+                  <p class="card-text">${oferta.price}</p>
+                  <a href=${urlbtn} class="btn btn-success w-100">Informes</a>
+                </div>
+              </div>
+            </div>
+          `);
+        });
+      });
+    });
+  </script>
 </body>
 </html>
